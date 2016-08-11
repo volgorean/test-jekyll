@@ -1,9 +1,8 @@
 ---
-layout: page
 title: Blog
-permalink: /blog
+layout: page
+permalink: "/blog"
 ---
-
 <div class="home">
 
   <h1 class="page-heading">Posts</h1>
@@ -11,7 +10,7 @@ permalink: /blog
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        {{ post.date | date: "%b %-d, %Y" }}
 
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
@@ -25,6 +24,6 @@ permalink: /blog
     {% endfor %}
   </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <p class="rss-subscribe">subscribe <a href="{{ " feed.xml"="" |="" prepend:="" site.baseurl="" }}"="">via RSS</a></p>
 
 </div>
