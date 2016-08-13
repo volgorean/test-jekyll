@@ -11,8 +11,8 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #111;
+  font: 400 16px/1.5 "Roboto", Helvetica, Arial, sans-serif;
+  color: #404040;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
@@ -29,6 +29,14 @@ p, blockquote, pre,
 ul, ol, dl, figure,
 .highlight {
   margin-bottom: 15px; }
+
+/**
+ * Paragraph
+*/
+p {
+  font-size: 1.25em;
+  font-weight: 300;
+  line-height: 1.5; }
 
 /**
  * Images
@@ -71,7 +79,7 @@ a {
   a:visited {
     color: #1756a9; }
   a:hover {
-    color: #111;
+    color: #404040;
     text-decoration: underline; }
 
 /**
@@ -148,10 +156,14 @@ pre {
  * Site header
  */
 .site-header {
+  background: #00a2db;
   border-top: 5px solid #424242;
   border-bottom: 1px solid #e8e8e8;
   min-height: 56px;
   position: relative; }
+
+a.site-title {
+  color: #ffffff; }
 
 .site-title {
   font-size: 26px;
@@ -160,8 +172,6 @@ pre {
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left; }
-  .site-title, .site-title:visited {
-    color: #424242; }
 
 .site-nav {
   float: right;
@@ -169,7 +179,7 @@ pre {
   .site-nav .menu-icon {
     display: none; }
   .site-nav .page-link {
-    color: #111;
+    color: #404040;
     line-height: 1.5; }
     .site-nav .page-link:not(:last-child) {
       margin-right: 20px; }
@@ -263,6 +273,19 @@ pre {
 /**
  * Page content
  */
+.page-posts {
+  border-bottom: solid 1px #eee;
+  margin-bottom: 3em;
+  padding-top: 1.5em;
+  padding-bottom: 2.5em;
+  text-align: center; }
+  .page-posts .page-title {
+    font-size: 3.8em;
+    line-height: 1; }
+
+article {
+  margin-bottom: 2em; }
+
 .page-content {
   padding: 30px 0; }
 
@@ -281,7 +304,8 @@ pre {
 
 .post-link {
   display: block;
-  font-size: 24px; }
+  font-size: 2.2em;
+  margin-bottom: 0; }
 
 /**
  * Posts
@@ -296,6 +320,11 @@ pre {
   @media screen and (max-width: 800px) {
     .post-title {
       font-size: 36px; } }
+
+.post-summary {
+  font-size: 1.25em;
+  line-height: 1.5;
+  font-weight: 300; }
 
 .post-content {
   margin-bottom: 30px; }
