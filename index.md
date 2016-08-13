@@ -1,5 +1,8 @@
 ---
+title: Ipset lorum ipse
 layout: default
+excerpt: Descrizione descr descr descr descr descr descr descr 
+keywords: uno, due, tre
 ---
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)

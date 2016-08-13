@@ -9,7 +9,13 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
+
+        {% if page.layout == 'default' %}
+            {% include page-title.html %}
+        {% endif %}
+        
         {{ content }}
+        
       </div>
     </main>
 
