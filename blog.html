@@ -1,28 +1,26 @@
 ---
-title: Blog
+title: Our awesome blog
 layout: default
 permalink: "/blog"
+summary: Ipset lorum ipset loret amert lorum ipset loret amert 
 ---
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        {{ post.date | date: "%b %-d, %Y" }}
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
-        </h2>
-        
-        {% if post.summary %}
-          <p class="post-summary">{{ post.summary | strip_html | normalize_whitespace | truncate: 160 | escape }}</p>
-        {% endif %}
-        
-      </li>
-    {% endfor %}
-  </ul>
+<div class="home blog" itemscope itemtype="http://schema.org/BlogPosting">
+  
+  {% for post in site.posts %}
+  <article>
+    <header>
+    <h2 class="post-link" >
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+    </h2>
+    </header>
+    <p class="post-summary">
+      <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }} - </time>
+      {{ post.summary | default: post.content | strip_html | normalize_whitespace | truncate: 250 | escape }}
+      - <a href="{{ post.url | prepend: site.baseurl }}">Read this post</a>
+    </p>
+    
+  </article>
+  {% endfor %}
 
   <p class="rss-subscribe">subscribe <a href="{{ " feed.xml"="" |="" prepend:="" site.baseurl="" }}"="">via RSS</a></p>
 
