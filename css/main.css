@@ -313,6 +313,9 @@ article {
 .post-header {
   margin-bottom: 30px; }
 
+.blog {
+  font-size: 0.85em; }
+
 .post-title {
   font-size: 42px;
   letter-spacing: -1px;
