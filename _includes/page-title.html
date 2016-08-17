@@ -1,4 +1,4 @@
-  <header class="page-header {% if page.url == "/blog" %} page-posts {% endif %}">
+  <header class="page-header {% if page.url == "/blog" or page.url =="/blog/"  %} page-posts {% endif %}">
     <h1 class="page-title">{{ page.title | escape }}</h1>
      <p>{{ page.summary }}</p>
   </header>
