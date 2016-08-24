@@ -15,7 +15,7 @@ in_menu: Blog
     </h2>
     </header>
     <p class="post-summary">
-      <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }} - </time>
+      <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished"><b>{{ post.date | date: "%b %-d, %Y" }}</b> - </time>
       {{ post.summary | default: post.content | strip_html | normalize_whitespace | truncate: 250 | escape }}
       - <a href="{{ post.url | prepend: site.baseurl }}">Read this post</a>
     </p>
