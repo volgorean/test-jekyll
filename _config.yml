@@ -31,11 +31,14 @@ markdown: kramdown
 defaults:
   -
     scope:
-      path: ""        # empty string for all files
-      type: "pages"
+      path: ""
+      type: "posts"
     values:
-      layout: ""
-      author: "evyno"
-      categories: ""
-      summary: ""
-      keywords: ""
+      layout: "post"
+      author: "Mr. Hyde"
+  -
+    scope:
+      path: ""
+      type: "pages" # previously `page` in Jekyll 2.2.
+    values:
+      layout: "default" # overrides previous default layout
