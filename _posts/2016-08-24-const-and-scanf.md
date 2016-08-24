@@ -7,6 +7,7 @@ summary: Un tipico esempio di come la compilzione non è sempre efficace per pre
 ---
 
 **Esempio 1.** Il codice seguente dichiara e "inizializza" la variabile intera number con il valore 42. La parola ```cost``` (tecnicamente si chiama **qualificatore**) serve per dire al compilatore che la variabile avrà un valore costante durante l'esecuzione del programma. 
+
 {% highlight c %}
 #include <stdio.h>
 
@@ -86,7 +87,11 @@ Nell'esempio 1 la modifica "in-line" del codice e la successiva compilazione,  f
 
 Nell'esempio 2 la modifica della variabile tramite l'uso di ```scanf(" %i", &number);``` non interesserà il compilatore perchè il programma viene comunque compilato. In poche parole il compilatore nota che scanf() andrà a modificare una costante ma non ne vieta la modifica. 
 
-Quindi, durante l'esecuzione del programma, è possibile riassegnare un nuovo valore ad una costante!
+Quindi, durante l'esecuzione del programma, è possibile riassegnare un nuovo valore ad una costante! Questo perchè una variabile, costante o no, è sempre una locazione di memoria sullo STACK e la regola della "costanza" può essere infranta semplicemente sovrascrivendo la locazione di memoria. 
+
+Tale uso e metodo comporta ovvi problemi di comportamenti imprevisti del programma stesso.
 
 
+### Bibliografia o altri riferimenti
 
+* [Can we change the value of a constant through pointers?](http://stackoverflow.com/questions/3801557/can-we-change-the-value-of-a-constant-through-pointers)
