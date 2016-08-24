@@ -32,7 +32,7 @@ defaults:
   -
     scope:
       path: ""        # empty string for all files
-      type: "posts"
+      type: posts
     values:
       layout: "post"
       author: "evyno"
@@ -42,8 +42,8 @@ defaults:
   -
     scope:
       path: ""        # empty string for all files
-      type: "pages"
+      type: pages
     values:
-      layout: "default"
+      layout: default
       summary: ""
       keywords: ""      
