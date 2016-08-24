@@ -36,7 +36,7 @@ defaults:
     values:
       layout: "post"
       author: "evyno"
-      category: ""
+      categories: []
       summary: ""
       keywords: ""
   -
