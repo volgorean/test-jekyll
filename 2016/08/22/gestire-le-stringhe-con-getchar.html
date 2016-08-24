@@ -99,8 +99,8 @@
 
 <span class="kt">int</span> <span class="n">main</span> <span class="p">(</span><span class="kt">void</span><span class="p">){</span>
     <span class="kt">char</span> <span class="n">character</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="n">string</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="p">;</span>
-    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">string</span><span class="p">[</span><span class="mi">81</span><span class="p">];</span> <span class="c1">// 81 è il numero max di caratteri inseribili da console
+</span>    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     
     <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">**************************************</span><span class="se">\n</span><span class="s">"</span>
     <span class="s">"Verifico se in una parola ci sono </span><span class="se">\n</span><span class="s">"</span>
@@ -173,11 +173,11 @@ Inserisci una parola: qweeerty
 
 <p>La funzione <code class="highlighter-rouge">getchar()</code>, quando invocata, attiva un <em>buffer</em> di lettura. Il <em>buffer</em> di lettura è una caratteristica del terminale (shell o linea di comando) che quando invocato immagazzina lo streaming dei caratteri ricevuto in input tramite la tastiera fin quando non viene premuto il tasto Enter/Invio.</p>
 
-<p>Quando si invoca <code class="highlighter-rouge">getchar()</code> si va a leggere il singolo <em>*primo</em> carattere del <em>buffer</em> di lettura. Dopo la lettura il carattere letto viene “eliminato dal buffer” e il carattere successivo diventa il primo (il carattere “a capo” <code class="highlighter-rouge">\n</code> identifica che ci troviamo alla fine del buffer).</p>
+<p>Quando si invoca <code class="highlighter-rouge">getchar()</code> si va a leggere il singolo <strong>primo</strong> carattere del <em>buffer</em> di lettura. Dopo la lettura il carattere letto viene “eliminato dal buffer” e il carattere successivo diventa il primo (il carattere “a capo” <code class="highlighter-rouge">\n</code> identifica che ci troviamo alla fine del buffer).</p>
 
-<p>Tecnicamente l’array <code class="highlighter-rouge">string[i] = character;</code> lo troveremo riempito così:</p>
+<p>Tecnicamente l’array <code class="highlighter-rouge">string[i] = character;</code> lo troveremo riempito così (esempio):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>char stringa
+<div class="highlighter-rouge"><pre class="highlight"><code>char stringa[] = {q, w, e, r, t, y, \n, \0}
 </code></pre>
 </div>
 

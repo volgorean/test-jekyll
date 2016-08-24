@@ -6,8 +6,8 @@
 </description>
     <link>http://example.com/test-jekyll/</link>
     <atom:link href="http://example.com/test-jekyll/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Aug 2016 22:02:44 +0000</pubDate>
-    <lastBuildDate>Wed, 24 Aug 2016 22:02:44 +0000</lastBuildDate>
+    <pubDate>Wed, 24 Aug 2016 22:08:56 +0000</pubDate>
+    <lastBuildDate>Wed, 24 Aug 2016 22:08:56 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -196,8 +196,8 @@ Valore di y: 7
 
 &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;character&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;81&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 81 è il numero max di caratteri inseribili da console
+&lt;/span&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     
     &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;**************************************&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
     &lt;span class=&quot;s&quot;&gt;&quot;Verifico se in una parola ci sono &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
@@ -270,11 +270,11 @@ Inserisci una parola: qweeerty
 
 &lt;p&gt;La funzione &lt;code class=&quot;highlighter-rouge&quot;&gt;getchar()&lt;/code&gt;, quando invocata, attiva un &lt;em&gt;buffer&lt;/em&gt; di lettura. Il &lt;em&gt;buffer&lt;/em&gt; di lettura è una caratteristica del terminale (shell o linea di comando) che quando invocato immagazzina lo streaming dei caratteri ricevuto in input tramite la tastiera fin quando non viene premuto il tasto Enter/Invio.&lt;/p&gt;
 
-&lt;p&gt;Quando si invoca &lt;code class=&quot;highlighter-rouge&quot;&gt;getchar()&lt;/code&gt; si va a leggere il singolo &lt;em&gt;*primo&lt;/em&gt; carattere del &lt;em&gt;buffer&lt;/em&gt; di lettura. Dopo la lettura il carattere letto viene “eliminato dal buffer” e il carattere successivo diventa il primo (il carattere “a capo” &lt;code class=&quot;highlighter-rouge&quot;&gt;\n&lt;/code&gt; identifica che ci troviamo alla fine del buffer).&lt;/p&gt;
+&lt;p&gt;Quando si invoca &lt;code class=&quot;highlighter-rouge&quot;&gt;getchar()&lt;/code&gt; si va a leggere il singolo &lt;strong&gt;primo&lt;/strong&gt; carattere del &lt;em&gt;buffer&lt;/em&gt; di lettura. Dopo la lettura il carattere letto viene “eliminato dal buffer” e il carattere successivo diventa il primo (il carattere “a capo” &lt;code class=&quot;highlighter-rouge&quot;&gt;\n&lt;/code&gt; identifica che ci troviamo alla fine del buffer).&lt;/p&gt;
 
-&lt;p&gt;Tecnicamente l’array &lt;code class=&quot;highlighter-rouge&quot;&gt;string[i] = character;&lt;/code&gt; lo troveremo riempito così:&lt;/p&gt;
+&lt;p&gt;Tecnicamente l’array &lt;code class=&quot;highlighter-rouge&quot;&gt;string[i] = character;&lt;/code&gt; lo troveremo riempito così (esempio):&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;char stringa
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;char stringa[] = {q, w, e, r, t, y, \n, \0}
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
