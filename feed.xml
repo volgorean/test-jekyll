@@ -6,13 +6,13 @@
 </description>
     <link>http://example.com/test-jekyll/</link>
     <atom:link href="http://example.com/test-jekyll/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Aug 2016 00:01:39 +0000</pubDate>
-    <lastBuildDate>Wed, 24 Aug 2016 00:01:39 +0000</lastBuildDate>
+    <pubDate>Wed, 24 Aug 2016 00:08:50 +0000</pubDate>
+    <lastBuildDate>Wed, 24 Aug 2016 00:08:50 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>Funzioni e memoria STACK</title>
-        <description>&lt;p&gt;Analizziamo il codice sotto:&lt;/p&gt;
+        <description>&lt;p&gt;Analizziamo il codice sotto e arriveremo a capire come una funzione, che non rispetta alcuni accorgimenti, generi un output inaspettato.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
 &lt;/span&gt;

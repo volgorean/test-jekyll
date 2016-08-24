@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Funzioni e memoria STACK -  Your awesome title</title>
-  <meta name="description" content="Analizziamo il codice sotto: #include &amp;lt;stdio.h&amp;gt; void foo1(int xval) { int x; x = xval; // stampa l&#39;indirizzo e il valore di x printf(&quot;Indirizzo di x: %...">
+  <meta name="description" content="Analizziamo il codice sotto e arriveremo a capire come una funzione, che non rispetta alcuni accorgimenti, generi un output inaspettato. #include &amp;lt;stdio.h...">
   <meta name="keywords" content="">
   <link rel="stylesheet" href="/test-jekyll/css/main.css">
   <link rel="canonical" href="http://example.com/test-jekyll/2016/08/23/functions-and-stack.html">
@@ -89,7 +89,7 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Analizziamo il codice sotto:</p>
+    <p>Analizziamo il codice sotto e arriveremo a capire come una funzione, che non rispetta alcuni accorgimenti, generi un output inaspettato.</p>
 
 <figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt;
 </span>
