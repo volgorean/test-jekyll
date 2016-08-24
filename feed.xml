@@ -6,9 +6,96 @@
 </description>
     <link>http://example.com/test-jekyll/</link>
     <atom:link href="http://example.com/test-jekyll/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Aug 2016 12:09:46 +0000</pubDate>
-    <lastBuildDate>Wed, 24 Aug 2016 12:09:46 +0000</lastBuildDate>
+    <pubDate>Wed, 24 Aug 2016 14:20:37 +0000</pubDate>
+    <lastBuildDate>Wed, 24 Aug 2016 14:20:37 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Variabile constante e scanf()</title>
+        <description>&lt;p&gt;&lt;strong&gt;Esempio 1.&lt;/strong&gt; Il codice seguente dichiara e “inizializza” la variabile intera number con il valore 42. La parola &lt;code class=&quot;highlighter-rouge&quot;&gt;cost&lt;/code&gt; (tecnicamente si chiama &lt;strong&gt;qualificatore&lt;/strong&gt;) serve per dire al compilatore che la variabile avrà un valore costante durante l’esecuzione del programma.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;number = %i&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Con l’esecuzione del programma otterremo il seguente output:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;number = 42 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ora proviamo a modificare il valore di number  con &lt;code class=&quot;highlighter-rouge&quot;&gt;number = number / 2;&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// modifica di number
+&lt;/span&gt;        
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;number = %i&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Con gcc la compilazione non andrà a buon fine (non avremo il programma eseguibile), ottenendo un messaggio del tipo:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;error: assignmernt of read-only variable ‘number’&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Questo fa capire che il compilatore non vuole che la varibile &lt;code class=&quot;highlighter-rouge&quot;&gt;number&lt;/code&gt; sia modificata, e che lo “slot di memoria” all’interno dello STACK dovrebbe rimanere costante per l’intera durata del programma.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Esempio 2.&lt;/strong&gt; Ora vediamo un esempio simile a quello precedente dove la modifica della variabile non viene fatta “in-line” nel codice sorgente, ma durante l’esecuzione del programma con l’uso della funzione &lt;code class=&quot;highlighter-rouge&quot;&gt;scanf();&lt;/code&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;number = %i &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Digita un numero: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; %i&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;number = %i &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Con gcc la compilazione andrà a buon fine (avremo il programma eseguibile) ma il compilatore ci avverte con il seguente messaggio:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;warning: writing into constant object&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Questo &lt;strong&gt;warning&lt;/strong&gt;, ci informa che la costante potrebbe subire modiche da un’altra funzione.&lt;/p&gt;
+
+&lt;p&gt;Eseguendo il programma, verrà chiesto all’utente di digitare un numero. Noteremo che la varibile  &lt;code class=&quot;highlighter-rouge&quot;&gt;number&lt;/code&gt; subirà un cambio valore (il valore sarà quello digitato dall’utente).&lt;/p&gt;
+
+&lt;p&gt;Un esempio di output:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;number = 42 
+Digita un numero: 30
+number = 30 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ma come è possibile se la varibile è stata dichiarata come costante e non dovrebbe subire modifiche essendo “di sola lettura”?&lt;/p&gt;
+
+&lt;p&gt;Nell’esempio 1 la modifica “in-line” del codice e la successiva compilazione,  fanno capire al compilatore la &lt;strong&gt;“volontà”&lt;/strong&gt; di voler cambiare il valore di una costante. Di conseguenza il compilatore genera un messaggio di errore e non crea il programma eseguibile.&lt;/p&gt;
+
+&lt;p&gt;Nell’esempio 2 la modifica della variabile tramite l’uso di &lt;code class=&quot;highlighter-rouge&quot;&gt;scanf(&quot; %i&quot;, &amp;amp;number);&lt;/code&gt; non interesserà il compilatore perchè il programma viene comunque compilato. In poche parole il compilatore nota che scanf() andrà a modificare una costante ma non ne vieta la modifica.&lt;/p&gt;
+
+&lt;p&gt;Quindi, durante l’esecuzione del programma, è possibile riassegnare un nuovo valore ad una costante!&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 24 Aug 2016 12:00:00 +0000</pubDate>
+        <link>http://example.com/test-jekyll/2016/08/24/const-and-scanf.html</link>
+        <guid isPermaLink="true">http://example.com/test-jekyll/2016/08/24/const-and-scanf.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Funzioni e memoria STACK</title>
