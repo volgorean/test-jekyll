@@ -31,10 +31,19 @@ markdown: kramdown
 defaults:
   -
     scope:
-      path: "" # empty string for all files
+      path: ""        # empty string for all files
+      type: "posts"
     values:
-      layout: "default"
-      author: ""
+      layout: "post"
+      author: "evyno"
       category: ""
       summary: ""
       keywords: ""
+  -
+    scope:
+      path: ""        # empty string for all files
+      type: "pages"
+    values:
+      layout: "default"
+      summary: ""
+      keywords: ""      
