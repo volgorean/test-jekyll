@@ -6,8 +6,8 @@
 </description>
     <link>http://example.com/test-jekyll/</link>
     <atom:link href="http://example.com/test-jekyll/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Aug 2016 00:08:50 +0000</pubDate>
-    <lastBuildDate>Wed, 24 Aug 2016 00:08:50 +0000</lastBuildDate>
+    <pubDate>Wed, 24 Aug 2016 00:37:56 +0000</pubDate>
+    <lastBuildDate>Wed, 24 Aug 2016 00:37:56 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -88,6 +88,8 @@ Valore di y: 7
         <guid isPermaLink="true">http://example.com/test-jekyll/2016/08/23/functions-and-stack.html</guid>
         
         
+        <category></category>
+        
       </item>
     
       <item>
@@ -102,6 +104,8 @@ Valore di y: 7
         <link>http://example.com/test-jekyll/2016/08/10/ipset-lorum-ipse.html</link>
         <guid isPermaLink="true">http://example.com/test-jekyll/2016/08/10/ipset-lorum-ipse.html</guid>
         
+        
+        <category></category>
         
       </item>
     
@@ -129,6 +133,8 @@ Valore di y: 7
         
         <category>demo</category>
         
+        <category></category>
+        
       </item>
     
       <item>
@@ -154,6 +160,8 @@ Valore di y: 7
         
         
         <category>demo</category>
+        
+        <category></category>
         
       </item>
     
