@@ -32,10 +32,9 @@ defaults:
   -
     scope:
       path: ""        # empty string for all files
-      type: posts
     values:
-      layout: post
+      layout: ""
       author: "evyno"
-      categories: []
+      categories: ""
       summary: ""
       keywords: ""
