@@ -39,11 +39,3 @@ defaults:
       categories: []
       summary: ""
       keywords: ""
-  -
-    scope:
-      path: ""        # empty string for all files
-      type: pages
-    values:
-      layout: default
-      summary: ""
-      keywords: ""      
