@@ -34,7 +34,7 @@ defaults:
       path: ""        # empty string for all files
       type: posts
     values:
-      layout: "post"
+      layout: post
       author: "evyno"
       categories: []
       summary: ""
