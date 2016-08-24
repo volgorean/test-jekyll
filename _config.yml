@@ -32,6 +32,7 @@ defaults:
   -
     scope:
       path: ""        # empty string for all files
+      type: "posts"
     values:
       layout: ""
       author: "evyno"
