@@ -16,7 +16,7 @@ bool al_massimo_due_di_seguito_(const char *s);
 
 int main (void){
     char character = 0;
-    char string[10] ;
+    char string[81]; // 81 è il numero max di caratteri inseribili da console
     int i = 0;
     
     printf("\n**************************************\n"
@@ -94,12 +94,12 @@ do{
 
 La funzione ```getchar()```, quando invocata, attiva un *buffer* di lettura. Il *buffer* di lettura è una caratteristica del terminale (shell o linea di comando) che quando invocato immagazzina lo streaming dei caratteri ricevuto in input tramite la tastiera fin quando non viene premuto il tasto Enter/Invio.
 
-Quando si invoca ```getchar()``` si va a leggere il singolo **primo* carattere del *buffer* di lettura. Dopo la lettura il carattere letto viene "eliminato dal buffer" e il carattere successivo diventa il primo (il carattere "a capo" ```\n``` identifica che ci troviamo alla fine del buffer). 
+Quando si invoca ```getchar()``` si va a leggere il singolo **primo** carattere del *buffer* di lettura. Dopo la lettura il carattere letto viene "eliminato dal buffer" e il carattere successivo diventa il primo (il carattere "a capo" ```\n``` identifica che ci troviamo alla fine del buffer). 
 
-Tecnicamente l'array ```string[i] = character;``` lo troveremo riempito così: 
+Tecnicamente l'array ```string[i] = character;``` lo troveremo riempito così (esempio): 
 
 ```
-char stringa
+char stringa[] = {q, w, e, r, t, y, \n, \0}
 ```
 
 Ora, avendo letto i dati carattere per carattere, è necessario ricomporre tali dati in un'unico posto. Con  l'uso di un ciclo e di un array riusciamo a ricomporre la stringa inserita dall'utente. Dopo tutto una stringa non è altro che un array di caratteri!
