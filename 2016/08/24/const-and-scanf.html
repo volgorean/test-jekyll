@@ -164,8 +164,15 @@ number = 30
 
 <p>Nell’esempio 2 la modifica della variabile tramite l’uso di <code class="highlighter-rouge">scanf(" %i", &amp;number);</code> non interesserà il compilatore perchè il programma viene comunque compilato. In poche parole il compilatore nota che scanf() andrà a modificare una costante ma non ne vieta la modifica.</p>
 
-<p>Quindi, durante l’esecuzione del programma, è possibile riassegnare un nuovo valore ad una costante!</p>
+<p>Quindi, durante l’esecuzione del programma, è possibile riassegnare un nuovo valore ad una costante! Questo perchè una variabile, costante o no, è sempre una locazione di memoria sullo STACK e la regola della “costanza” può essere infranta semplicemente sovrascrivendo la locazione di memoria.</p>
 
+<p>Tale uso e metodo comporta ovvi problemi di comportamenti imprevisti del programma stesso.</p>
+
+<h3 id="bibliografia-o-altri-riferimenti">Bibliografia o altri riferimenti</h3>
+
+<ul>
+  <li><a href="http://stackoverflow.com/questions/3801557/can-we-change-the-value-of-a-constant-through-pointers">Can we change the value of a constant through pointers?</a></li>
+</ul>
 
   </div>
 
