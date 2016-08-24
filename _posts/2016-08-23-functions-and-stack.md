@@ -5,7 +5,7 @@ layout: post
 author: 
 summary: Analisi del comportamento tra due funzioni e la memoria STACK. Ovvero come una funzione andrà ad influenzare il comportamento di una seconda funzione.
 ---
-Analizziamo il codice sotto:  
+Analizziamo il codice sotto e arriveremo a capire come una funzione, che non rispetta alcuni accorgimenti, generi un output inaspettato.  
 
 {% highlight c %}
 #include <stdio.h>
