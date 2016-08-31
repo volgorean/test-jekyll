@@ -41,9 +41,11 @@ int main(void){
 }
 {% endhighlight %}
 
-Con gcc la compilazione non andrà a buon fine (non avremo il programma eseguibile), ottenendo un messaggio del tipo: 
+Con gcc la compilazione non andrà a buon fine (non avremo il programma eseguibile), ottenendo il seguente messaggio: 
 
+```
 **error: assignmernt of read-only variable 'number'**.
+```
 
 Questo fa capire che il compilatore non vuole che la varibile ```number``` sia modificata, e che lo "slot di memoria" all'interno dello STACK dovrebbe rimanere costante per l'intera durata del programma.
 
@@ -67,7 +69,9 @@ int main(void){
 
 Con gcc la compilazione andrà a buon fine (avremo il programma eseguibile) ma il compilatore ci avverte con il seguente messaggio: 
 
+```
 **warning: writing into constant object**.
+```
 
 Questo **warning**, ci informa che la costante potrebbe subire modiche da un'altra funzione.
 
