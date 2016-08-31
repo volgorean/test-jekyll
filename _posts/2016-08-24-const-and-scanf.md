@@ -1,9 +1,10 @@
 ---
 title: Variabile constante e scanf()
-date: 2016-08-24 12:00:00
+date: '2016-08-24 12:00:00'
 layout: post
-author: 
-summary: Un tipico esempio di come la compilzione non è sempre efficace per prevenire errori. Usando scanf() andremo a capire meglio la problematica.
+author: ''
+summary: Un tipico esempio di come la compilzione non è sempre efficace per prevenire
+  errori. Usando scanf() andremo a capire meglio la problematica.
 ---
 
 **Esempio 1.** Il codice seguente dichiara e "inizializza" la variabile intera number con il valore 42. La parola ```cost``` (tecnicamente si chiama **qualificatore**) serve per dire al compilatore che la variabile avrà un valore costante durante l'esecuzione del programma. 
