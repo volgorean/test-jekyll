@@ -6,8 +6,8 @@
 </description>
     <link>http://example.com/test-jekyll/</link>
     <atom:link href="http://example.com/test-jekyll/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Aug 2016 22:08:56 +0000</pubDate>
-    <lastBuildDate>Wed, 24 Aug 2016 22:08:56 +0000</lastBuildDate>
+    <pubDate>Wed, 31 Aug 2016 11:10:32 +0000</pubDate>
+    <lastBuildDate>Wed, 31 Aug 2016 11:10:32 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -43,9 +43,11 @@
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Con gcc la compilazione non andrà a buon fine (non avremo il programma eseguibile), ottenendo un messaggio del tipo:&lt;/p&gt;
+&lt;p&gt;Con gcc la compilazione non andrà a buon fine (non avremo il programma eseguibile), ottenendo il seguente messaggio:&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;error: assignmernt of read-only variable ‘number’&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;**error: assignmernt of read-only variable 'number'**.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Questo fa capire che il compilatore non vuole che la varibile &lt;code class=&quot;highlighter-rouge&quot;&gt;number&lt;/code&gt; sia modificata, e che lo “slot di memoria” all’interno dello STACK dovrebbe rimanere costante per l’intera durata del programma.&lt;/p&gt;
 
@@ -67,7 +69,9 @@
 
 &lt;p&gt;Con gcc la compilazione andrà a buon fine (avremo il programma eseguibile) ma il compilatore ci avverte con il seguente messaggio:&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;warning: writing into constant object&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;**warning: writing into constant object**.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Questo &lt;strong&gt;warning&lt;/strong&gt;, ci informa che la costante potrebbe subire modiche da un’altra funzione.&lt;/p&gt;
 
@@ -145,7 +149,7 @@ Valore di y: 7
 &lt;/div&gt;
 &lt;p&gt;(l’ &lt;code class=&quot;highlighter-rouge&quot;&gt;indirizzo di x&lt;/code&gt; e l’&lt;code class=&quot;highlighter-rouge&quot;&gt;indirizzo di y&lt;/code&gt; cambieranno ad ogni esecuzione).&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Cosa succede.&lt;/strong&gt; Generalemente, quando una funzione viene invocata, la memoria del calcolatore viene riservata per intero alla funzione. La memoria di cui si parla è lo &lt;a href=&quot;https://it.wikipedia.org/wiki/Pila_(informatica)&quot;&gt;STACK&lt;/a&gt;. Più precisamente, alla funzione, si riservano dei blocchi di memoria con dimensione prefissate meglio conosciuti come “&lt;em&gt;slot di memoria&lt;/em&gt;”. In ogni slot verrà inserito un dato. Il dato sarà un numero che rappresenta un quantitativo o un indirizzo, in base a come il codice è programmato.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cosa succede.&lt;/strong&gt; Generalemente, quando una funzione viene invocata, la memoria del calcolatore viene riservata per intero alla funzione. La memoria di cui si parla è lo &lt;a href=&quot;https://it.wikipedia.org/wiki/Pila_(informatica)&quot;&gt;STACK&lt;/a&gt;. Più precisamente, alla funzione, si riservano dei blocchi di memoria meglio conosciuti come “&lt;em&gt;slot di memoria&lt;/em&gt;”. Ogni slot avrà un proprio &lt;em&gt;indirizzo di memoria&lt;/em&gt; e una dimesione specifica. In ogni slot verrà inserito un dato. Il dato sarà datermianto in base a come viene dichiarato il &lt;em&gt;tipo di dato&lt;/em&gt; (es: intero, char, float o anche puntatore ecc…).&lt;/p&gt;
 
 &lt;p&gt;Guardiamo il codice della funzione &lt;code class=&quot;highlighter-rouge&quot;&gt;foo1()&lt;/code&gt; per capirne il funzionamento:&lt;/p&gt;
 
@@ -158,11 +162,11 @@ Valore di y: 7
     &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;   Valore di x: %i&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Con &lt;code class=&quot;highlighter-rouge&quot;&gt;int x;&lt;/code&gt; si dichiara la variabile &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; come intero (qui lo STACK non è ancora usato). Con &lt;code class=&quot;highlighter-rouge&quot;&gt;x = xval;&lt;/code&gt;  si inizializza la variabile &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; con il valore del “parametro formale” della funzione. &lt;strong&gt;Qui si usa lo STACK&lt;/strong&gt;, infatti l’inizializzazione della variabile fa si che nel primo slot di memoria disponibile sullo STACK viene inserito il valore del parametro formale &lt;code class=&quot;highlighter-rouge&quot;&gt;xval&lt;/code&gt; della funzione (in questo caso il valore è il numero 7 perchè nella funzione principale &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; si invoca &lt;code class=&quot;highlighter-rouge&quot;&gt;foo1(7)&lt;/code&gt;). Successivamente si esegue la stampa dell’indirizzo e poi del valore contenuto nella variabile &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Quando in &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; la funzione è invocata, lo stack è reso interamente a disposizione della funzione chiamante. Con &lt;code class=&quot;highlighter-rouge&quot;&gt;int x;&lt;/code&gt; si dichiara la variabile &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; come intero e nello stack succede che alla variabile &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; viene assegnato un indirizzo di memoria in modo da poter “localizzare” la variabile durante l’uso del programma (una sorta di indirizzo civico di un’abitazione). Con &lt;code class=&quot;highlighter-rouge&quot;&gt;x = xval;&lt;/code&gt;  si inizializza la variabile &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; con il valore del “parametro formale” della funzione; in pratica si “riempie” il primo slot di memoria libero con un dato. Nel nostro caso l’inizializzazione della variabile fa si che nel primo slot di memoria disponibile sullo STACK viene inserito il valore del parametro formale &lt;code class=&quot;highlighter-rouge&quot;&gt;xval&lt;/code&gt; della funzione (in questo caso il valore è il numero 7 perchè nella funzione principale &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; si invoca &lt;code class=&quot;highlighter-rouge&quot;&gt;foo1(7)&lt;/code&gt;). Successivamente si esegue la stampa dell’indirizzo e poi del valore contenuto nella variabile &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Terminata la funzione la memoria dello STACK viene deallocata (liberata; è un comportamento di default delle funzioni), quindi resa disponibile per un’uso successivo.&lt;/p&gt;
+&lt;p&gt;Terminata la funzione la memoria dello STACK viene &lt;em&gt;deallocata&lt;/em&gt; (cioè resa nuovamente disponibile per altri usi; è un comportamento di default dello stack quando si usano le funzione).&lt;/p&gt;
 
-&lt;p&gt;Il valore 7 però non viene cancellato dallo slot di memoria, ma continua ad esistere fin quando non verrà sovrascritto. Il dato verrà sovrascritto solo quando (ad esempio) si inizializza una nuova variabile di una qualsiasi altra funzione invocata. Ciò non accade quando si invoca la funzione &lt;code class=&quot;highlighter-rouge&quot;&gt;foo2()&lt;/code&gt; che dichiara, &lt;strong&gt;ma non inizializza&lt;/strong&gt;, la varibile &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Il valore 7 però non viene cancellato dallo slot di memoria, ma continua ad esistere fin quando non verrà sovrascritto (nota che lo slot di memoria continua ad avere SEMPRE lo stesso indirizzo “fisico” di memoria). Il dato verrà sovrascritto solo quando (ad esempio) si &lt;strong&gt;inizializza&lt;/strong&gt; una nuova variabile di una qualsiasi altra funzione invocata. Ciò non accade quando si invoca la funzione &lt;code class=&quot;highlighter-rouge&quot;&gt;foo2()&lt;/code&gt; che dichiara, &lt;strong&gt;ma non inizializza&lt;/strong&gt;, la varibile &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt;. La &lt;em&gt;dichiarazione&lt;/em&gt; assegna alla variabile &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; la prima locazione di memoria disponibile sullo stack.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dummy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -172,7 +176,11 @@ Valore di y: 7
     &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;   Valore di y: %i&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Questo spiega il perchè l’output della funzione &lt;code class=&quot;highlighter-rouge&quot;&gt;foo2()&lt;/code&gt; generi sempre il valore 7 al posto del valore 11, come ci si aspetterebbe vedendo la funzione &lt;code class=&quot;highlighter-rouge&quot;&gt;foo2(11)&lt;/code&gt; nella funzione principale &lt;code class=&quot;highlighter-rouge&quot;&gt;main&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;La prima locazione di memoria (slot) disponibile sullo stack è la stessa che era stata usata in precedenza dalla funzione &lt;code class=&quot;highlighter-rouge&quot;&gt;foo1()&lt;/code&gt;, quindi a quell’indirizzo esiste ancora il dato (sovrascrivibile) inserito dalla funzione precedente. Non inizializzare la varibile &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; fa si che il dato presente nella locazione di memoria assegnata a &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; non si sovrascriva!&lt;/p&gt;
+
+&lt;p&gt;Quando si stampa, la funzione &lt;code class=&quot;highlighter-rouge&quot;&gt;printf(&quot;   Valore di y: %i\n&quot;, y);&lt;/code&gt; stampa il valore contenuto nella variabile &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt;. Essendo che la varibile &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; risiede nello slot di memoria gia usato in precedenza, conterrà il dato inserito dalla funzione precedente (appunto perchè &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; non è stata &lt;strong&gt;inizializzata&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;p&gt;Questo spiega il perchè l’output della funzione &lt;code class=&quot;highlighter-rouge&quot;&gt;foo2()&lt;/code&gt; generi sempre il valore 7 al posto del valore 11, come ci si aspetterebbe vedendo la funzione &lt;code class=&quot;highlighter-rouge&quot;&gt;foo2(11)&lt;/code&gt; nella funzione principale &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Se la variabile &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; fosse stata inizializza nel modo seguente &lt;code class=&quot;highlighter-rouge&quot;&gt;y = dummy&lt;/code&gt; l’output sarebbe stato 11.&lt;/p&gt;
 

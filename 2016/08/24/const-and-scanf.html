@@ -120,9 +120,11 @@
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Con gcc la compilazione non andrà a buon fine (non avremo il programma eseguibile), ottenendo un messaggio del tipo:</p>
+<p>Con gcc la compilazione non andrà a buon fine (non avremo il programma eseguibile), ottenendo il seguente messaggio:</p>
 
-<p><strong>error: assignmernt of read-only variable ‘number’</strong>.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>**error: assignmernt of read-only variable 'number'**.
+</code></pre>
+</div>
 
 <p>Questo fa capire che il compilatore non vuole che la varibile <code class="highlighter-rouge">number</code> sia modificata, e che lo “slot di memoria” all’interno dello STACK dovrebbe rimanere costante per l’intera durata del programma.</p>
 
@@ -144,7 +146,9 @@
 
 <p>Con gcc la compilazione andrà a buon fine (avremo il programma eseguibile) ma il compilatore ci avverte con il seguente messaggio:</p>
 
-<p><strong>warning: writing into constant object</strong>.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>**warning: writing into constant object**.
+</code></pre>
+</div>
 
 <p>Questo <strong>warning</strong>, ci informa che la costante potrebbe subire modiche da un’altra funzione.</p>
 
